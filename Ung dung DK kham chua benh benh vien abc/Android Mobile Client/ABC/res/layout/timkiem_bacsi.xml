@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+      <TextView
+		 android:id="@+id/txtIntro"
+		 android:layout_width="match_parent"
+		 android:layout_height="wrap_content"
+		 android:layout_margin="10dp"
+		 android:background="#FFC966"
+		 android:gravity="center"
+		 android:text="TÌM BÁC SĨ"
+		 android:textSize="30sp" />
+      
+      	<TextView
+		 android:id="@+id/txtHoten"
+		 android:layout_width="wrap_content"
+		 android:layout_height="wrap_content"
+		 android:layout_margin="10dp"
+		 android:background="#FFC966"
+		 android:gravity="center"
+		 android:text="Họ và tên"
+		 android:textSize="30sp" />
+          		 <EditText 
+         android:id="@+id/edtHoten"
+		 android:layout_width="match_parent"
+		 android:layout_height="wrap_content"
+		 android:layout_margin="10dp"
+		 android:textSize="30sp"
+		 android:hint="Nhập tên bác sĩ"
+         />
+          <TextView
+		 android:id="@+id/txtLinhvuc"
+		 android:layout_width="wrap_content"
+		 android:layout_height="wrap_content"
+		 android:layout_margin="10dp"
+		 android:background="#FFC966"
+		 android:gravity="center"
+		 android:text="Chọn lĩnh vực bác sĩ"
+		 android:textSize="30sp" />		 
+          <Spinner
+	    android:id="@+id/spnChuyenkhoa"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:prompt="@string/prompt_khoa"
+	    />
+           <TextView
+		 android:id="@+id/txtLichkham"
+		 android:layout_width="wrap_content"
+		 android:layout_height="wrap_content"
+		 android:layout_margin="10dp"
+		 android:background="#FFC966"
+		 android:gravity="center"
+		 android:text="Chọn lịch khám"
+		 android:textSize="30sp" />		 
+          <Spinner
+	    android:id="@+id/spnLichkham"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:prompt="@string/prompt_lichkham"
+	    />
+          
+ 	    <Button
+		     android:id="@+id/btnTiemkiem"
+			 android:layout_width="wrap_content"
+			 android:layout_height="wrap_content"
+			 android:text="TÌM KIẾM"
+			 android:textSize="30sp"
+			 android:layout_margin="10dp"
+       	/>     
+        <GridView 
+		    android:id="@+id/gvBacsi"
+		    android:layout_width="match_parent"
+		    android:layout_height="match_parent"
+		    android:layout_margin="10dp"
+		    android:columnWidth="90dp"
+		    android:numColumns="3"
+		    android:verticalSpacing="10dp"
+		    android:horizontalSpacing="10dp"
+		    android:stretchMode="columnWidth"
+		    android:gravity="center"				
+			/>
+
+</LinearLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <TextView
+		 android:id="@+id/txtIntro"
+		 android:layout_width="match_parent"
+		 android:layout_height="wrap_content"
+		 android:layout_margin="10dp"
+		 android:background="#FFC966"
+		 android:gravity="center"
+		 android:text="#2 XÁC NHẬN THÔNG TIN"
+		 android:textSize="30sp" />  
+		 
+    <ScrollView 
+          android:layout_width="match_parent"
+    	  android:layout_height="match_parent"
+    	>
+    	<LinearLayout
+	     android:layout_width="match_parent"
+		 android:layout_height="match_parent" 
+		 android:orientation="vertical"
+	     >
+	     <TextView
+		 android:id="@+id/txtThongbao"
+		 android:layout_width="match_parent"
+		 android:layout_height="wrap_content"
+		 android:layout_margin="10dp"
+		 android:background="#FFC966"
+		 android:gravity="center"
+		 android:textSize="30sp" />  
+	
+   	 
+ 	    <Button
+		     android:id="@+id/btnDongy"
+			 android:layout_width="match_parent"
+			 android:layout_height="wrap_content"
+			 android:background="#FFC966"
+			 android:text="ĐĂNG KÝ"
+			 android:textSize="30sp"
+			 android:layout_alignParentLeft="true"
+			 android:layout_marginTop="300sp"
+       	/>   
+       	
+ 	     <Button
+		     android:id="@+id/btnHuy"
+			 android:layout_width="match_parent"
+			 android:layout_height="wrap_content"
+			 android:background="#FFC966"
+			 android:text="HỦY"
+			 android:textSize="30sp"
+			 android:layout_alignParentLeft="true"
+			 android:layout_marginTop="10dp"
+       	/>   
+	
+	     
+	 </LinearLayout>		 
+    
+    
+	</ScrollView>
+	 
+   	 
+    
+
+</LinearLayout>

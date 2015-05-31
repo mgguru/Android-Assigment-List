@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/linearLayout" >
+    <TextView
+		 android:id="@+id/txtIntro"
+		 android:layout_width="match_parent"
+		 android:layout_height="wrap_content"
+		 android:layout_margin="10dp"
+		 android:background="#FFC966"
+		 android:gravity="center"
+		 android:text="#1 ĐIỀN THÔNG TIN"
+		 android:textSize="30sp" />
+         
+      <ScrollView 
+          android:layout_width="match_parent"
+    	  android:layout_height="match_parent"
+    	  android:layout_gravity="center_horizontal"
+          >
+          	<LinearLayout 
+          	        android:layout_width="match_parent"
+    				android:layout_height="match_parent"
+    				android:orientation="vertical"
+          		>
+          		<TextView
+		 android:id="@+id/txtHoten"
+		 android:layout_width="wrap_content"
+		 android:layout_height="wrap_content"
+		 android:layout_margin="10dp"
+		 android:background="#FFC966"
+		 android:gravity="center"
+		 android:text="Họ và tên"
+		 android:textSize="30sp" />
+          		 <EditText 
+         android:id="@+id/edtHoten"
+		 android:layout_width="match_parent"
+		 android:layout_height="wrap_content"
+		 android:layout_margin="10dp"
+		 android:textSize="30sp"
+		 android:hint="Nhập họ và tên"
+         />
+     <TextView
+		 android:id="@+id/txtSodienthoai"
+		 android:layout_width="wrap_content"
+		 android:layout_height="wrap_content"
+		 android:layout_margin="10dp"
+		 android:background="#FFC966"
+		 android:gravity="center"
+		 android:text="Số điện thoại"
+		 android:textSize="30sp" />
+     <EditText 
+         android:id="@+id/edtSodienthoai"
+		 android:layout_width="match_parent"
+		 android:layout_height="wrap_content"
+		 android:layout_margin="10dp"
+		 android:textSize="30sp"
+		 android:hint="Nhập số điện thoại di động"
+         />     
+     
+     <TextView
+		 android:id="@+id/txtChuyenkhoa"
+		 android:layout_width="wrap_content"
+		 android:layout_height="wrap_content"
+		 android:layout_margin="10dp"
+		 android:background="#FFC966"
+		 android:gravity="center"
+		 android:text="Chọn khoa điều trị"
+		 android:textSize="30sp" />
+     <Spinner
+	    android:id="@+id/spnChuyenkhoa"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:prompt="@string/prompt_khoa"
+	    />
+    <!--   <TextView
+		 android:id="@+id/txtBacsi"
+		 android:layout_width="wrap_content"
+		 android:layout_height="wrap_content"
+		 android:layout_margin="10dp"
+		 android:background="#FFC966"
+		 android:gravity="center"
+		 android:text="Chọn bác sĩ"
+		 android:textSize="30sp" />
+     <Spinner
+	    android:id="@+id/spnBacsi"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content" 
+	    android:prompt="@string/prompt_bacsi"
+	   />    --> 
+       <Button
+         android:id="@+id/btnNgaykhambenh"
+		 android:layout_width="wrap_content"
+		 android:layout_height="wrap_content"
+		 android:background="#FFC966"
+		 android:layout_margin="10dp"
+		 android:text="Chọn ngày khám bệnh"
+		 android:textSize="30sp"
+          />
+       <TextView
+		 android:id="@+id/txtNgaykhambenh"
+		 android:layout_width="wrap_content"
+		 android:layout_height="wrap_content"
+		 android:layout_margin="10dp"
+		 android:gravity="center"
+		 android:textSize="30sp" 
+		 android:textStyle="bold"
+		 android:text="today.."/>
+       
+
+ 	    <Button
+		     android:id="@+id/btnDangky"
+			 android:layout_width="match_parent"
+			 android:layout_height="wrap_content"
+			 android:background="#FFC966"
+			 android:text="ĐĂNG KÝ"
+			 android:textSize="30sp"
+			 android:layout_alignParentLeft="true"
+			 android:layout_marginTop="300sp"
+       	/>     
+          
+    		</LinearLayout>
+          
+      </ScrollView>
+        
+        
+    
+    
+       
+      
+      
+     
+    
+
+    
+
+</LinearLayout>

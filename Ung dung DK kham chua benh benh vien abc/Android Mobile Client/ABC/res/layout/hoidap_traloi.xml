@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <TextView
+		 android:id="@+id/txtIntro"
+		 android:layout_width="match_parent"
+		 android:layout_height="wrap_content"
+		 android:layout_margin="10dp"
+		 android:background="#FFC966"
+		 android:gravity="center"
+		 android:text="HỎI/ĐÁP"
+		 android:textSize="30sp" /> 
+     <TextView
+		 android:id="@+id/txtNgayGui"
+		 android:layout_width="wrap_content"
+		 android:layout_height="wrap_content"
+		 android:layout_margin="10dp"
+		 android:background="#FFC966"
+		 android:gravity="center"
+		 android:text="Ngày gửi:12/21/2014"
+		 android:textSize="20sp" />
+     <TextView
+		 android:id="@+id/txtNguoiHoi"
+		 android:layout_width="wrap_content"
+		 android:layout_height="wrap_content"
+		 android:layout_margin="10dp"
+		 android:background="#FFC966"
+		 android:gravity="center"
+		 android:text="Người Hỏi"
+		 android:textSize="20sp" />
+            <TextView
+		 android:id="@+id/txtCauHoi"
+		 android:layout_width="wrap_content"
+		 android:layout_height="wrap_content"
+		 android:layout_margin="10dp"
+		 android:background="#FFC966"
+		 android:gravity="center"
+		 android:text="Câu hỏi: Bác sĩ, dạo này em sao sao ấy.."
+		 android:textSize="20sp" />
+               <TextView
+		 android:id="@+id/txtCauTraloi"
+		 android:layout_width="wrap_content"
+		 android:layout_height="wrap_content"
+		 android:layout_margin="10dp"
+		 android:background="#FFC966"
+		 android:gravity="center"
+		 android:text="Câu trả lời: Chào em, theo như những gì em mô tả thì em bệnh nặng lắm rồi, em đăng ký rồi vào khám sớm nhé "
+		 android:textSize="20sp" />
+              <TextView
+		 android:id="@+id/txtNguoiTraLoi"
+		 android:layout_width="wrap_content"
+		 android:layout_height="wrap_content"
+		 android:layout_margin="10dp"
+		 android:background="#FFC966"
+		 android:gravity="center"
+		 android:text="Người trả lời: Bác sĩ Lâm Bang"
+		 android:textSize="20sp" />
+    
+
+</LinearLayout>

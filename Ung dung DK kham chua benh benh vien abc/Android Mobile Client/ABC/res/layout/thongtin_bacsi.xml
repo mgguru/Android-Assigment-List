@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/txtIntro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="#FFC966"
+        android:gravity="center"
+        android:text="THÔNG TIN BÁC SĨ"
+        android:textSize="30sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp" >
+
+        <com.android.volley.toolbox.NetworkImageView
+            android:id="@+id/imgBacsi"
+            android:layout_width="200sp"
+            android:layout_height="200sp"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/ic_launcher" />
+
+        <TextView
+            android:id="@+id/txtTenbacsi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/imgBacsi"
+            android:layout_margin="10dp"
+            android:layout_toLeftOf="@+id/btnXemlichkham"
+            android:layout_toRightOf="@+id/imgBacsi"
+            android:background="#FFC966"
+            android:gravity="center"
+            android:text="tên"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/txtChuyenkhoa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtTenbacsi"
+            android:layout_margin="10dp"
+            android:layout_toLeftOf="@+id/btnXemlichkham"
+            android:layout_toRightOf="@+id/imgBacsi"
+            android:background="#FFC966"
+            android:gravity="center"
+            android:text="khoa"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/txtGioitinh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtChuyenkhoa"
+            android:layout_margin="10dp"
+            android:layout_toRightOf="@+id/imgBacsi"
+            android:background="#FFC966"
+            android:gravity="center"
+            android:text="Gioi tinh"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/btnDangkykhambenh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/btnXemlichkham"
+            android:layout_margin="10dp"
+            android:text="Đăng ký khám bệnh" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TextView
+            android:id="@+id/txtThongtincanhan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#FFC966"
+            android:gravity="center"
+            android:text="Phần này là thông tin cá nhân của bác sĩ"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+</LinearLayout>

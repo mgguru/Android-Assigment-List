@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ABC</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    
+    <string name="prompt_khoa">Chọn một khoa</string>
+    <string-array name="ds_khoa">
+        <item>All</item>
+        <item>Thần kinh</item>
+        <item>Tim mạch</item>
+        <item>Răng - hàm - mặt</item>
+        <item>Da liễu</item>
+        <item>Chỉnh hình</item>
+    </string-array>    
+    
+    <string name="prompt_bacsi">Chọn một bác sĩ</string>
+    <string-array name="ds_bacsi">
+        <item>Nguyễn Văn A</item>
+        <item>Lê Thị B</item>
+       <item>Nguyễn Văn C</item>
+        <item>Lê Thị D</item>
+        <item>Nguyễn Văn E</item>
+        <item>Lê Thị F</item>
+        <item>Nguyễn Văn G</item>
+        <item>Lê Thị H</item>
+    </string-array>  
+    
+    <string name="prompt_bangcap">Chọn học vị</string>
+    <string-array name="ds_bangcap">
+        <item>All</item>
+        <item>Cử nhân</item>
+        <item>Bác sĩ</item>
+        <item>Thạc sĩ</item>
+        <item>Tiến sĩ</item>
+        <item>Giáo sư</item>
+    </string-array> 
+    
+    <string name="prompt_lichkham">Chọn lịch khám</string>
+    <string-array name="ds_lichkham">
+        <item>All</item>
+        <item>Sáng thứ Hai</item>
+        <item>Chiều thứ Hai</item>
+        <item>Sáng thứ Ba</item>
+        <item>Chiều thứ Ba</item>
+        <item>Sáng thứ Tư</item>
+        <item>Chiều thứ Tư</item>
+        <item>Sáng thứ Năm</item>
+        <item>Chiều thứ Năm </item>
+        <item>Sáng thứ Sáu</item>
+        <item>Chiều thứ Sáu</item>
+        <item>Sáng thứ Bảy</item>
+        <item>Chiều thứ Bảy</item>
+        <item>Sáng Chủ Nhật</item>
+        <item>Chiều Chủ Nhật</item>
+    </string-array>  
+      
+    <string name="prompt_gioitinh">Chọn giới tính</string>
+    <string-array name="ds_gioitinh">
+        <item>Nam</item>
+        <item>Nữ</item>
+    </string-array>
+
+</resources>
