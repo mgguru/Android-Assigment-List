@@ -50,15 +50,29 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.56"
         android:ems="10"
-        android:inputType="textMultiLine" >
+        android:hint="Ghi câu hỏi của bạn ở đây..."
+        android:inputType="textMultiLine"
+        android:textSize="30sp" >
 
         <requestFocus />
     </EditText>
 
     <Button
         android:id="@+id/btnGuicauhoi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Gửi câu hỏi" />
+        android:layout_width="250sp"
+        android:layout_height="60sp"
+        android:layout_margin="10sp"
+        android:drawableLeft="@drawable/register"
+        android:text="Gửi câu hỏi"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/btnLamlai"
+        android:layout_width="250sp"
+        android:layout_height="60sp"
+        android:layout_margin="10sp"
+        android:drawableLeft="@drawable/reset"
+        android:text="Làm lại"
+        android:textSize="30sp" />
 
 </LinearLayout>

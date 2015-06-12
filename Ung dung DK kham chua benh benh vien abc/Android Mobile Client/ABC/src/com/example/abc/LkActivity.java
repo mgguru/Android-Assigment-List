@@ -18,28 +18,28 @@ public class LkActivity extends Activity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lichkham_bacsi);
-        Button btnTimkiem = (Button) findViewById(R.id.btnTimkiem);
-        btnTimkiem.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				Intent intent = new Intent(LkActivity.this,
-                        ThongTinLichKhamActivity.class);
-                startActivity(intent);
-			}
-		});        
-        Spinner spnChuyenkhoa = (Spinner) findViewById(R.id.spnChuyenkhoa);
-        ArrayAdapter<CharSequence> adapterKhoa = ArrayAdapter.createFromResource(
-                this, R.array.ds_khoa, R.layout.spinner_item);
-        spnChuyenkhoa.setAdapter(adapterKhoa);
-        spnChuyenkhoa.setOnItemSelectedListener(new KhoaSelectedListener());
-        
-        Spinner spnLichkham = (Spinner) findViewById(R.id.spnLichkham);
-        ArrayAdapter<CharSequence> adapterLichkham = ArrayAdapter.createFromResource(
-                this, R.array.ds_lichkham, R.layout.spinner_item);
-        spnLichkham.setAdapter(adapterLichkham);
-        spnLichkham.setOnItemSelectedListener(new LichkhamSelectedListener());
+//        Button btnTimkiem = (Button) findViewById(R.id.btnTimkiem);
+//        btnTimkiem.setOnClickListener(new OnClickListener() {
+//			
+//			@Override
+//			public void onClick(View v) {
+//				// TODO Auto-generated method stub
+//				Intent intent = new Intent(LkActivity.this,
+//                        ThongTinLichKhamActivity.class);
+//                startActivity(intent);
+//			}
+//		});        
+//        Spinner spnChuyenkhoa = (Spinner) findViewById(R.id.spnChuyenkhoa);
+//        ArrayAdapter<CharSequence> adapterKhoa = ArrayAdapter.createFromResource(
+//                this, R.array.ds_khoa, R.layout.spinner_item);
+//        spnChuyenkhoa.setAdapter(adapterKhoa);
+//        spnChuyenkhoa.setOnItemSelectedListener(new KhoaSelectedListener());
+//        
+//        Spinner spnLichkham = (Spinner) findViewById(R.id.spnLichkham);
+//        ArrayAdapter<CharSequence> adapterLichkham = ArrayAdapter.createFromResource(
+//                this, R.array.ds_lichkham, R.layout.spinner_item);
+//        spnLichkham.setAdapter(adapterLichkham);
+//        spnLichkham.setOnItemSelectedListener(new LichkhamSelectedListener());
         
         /*Spinner spnGioitinh = (Spinner) findViewById(R.id.spnGioitinh);
         ArrayAdapter<CharSequence> adapterGioitinh = ArrayAdapter.createFromResource(
@@ -56,57 +56,57 @@ public class LkActivity extends Activity  {
         
     }
 	
-	private class KhoaSelectedListener implements OnItemSelectedListener {
-   	 
-        public void onItemSelected(AdapterView<?> parent,
-            View view, int pos, long id) {
-          Toast.makeText(parent.getContext(), "Item is " +
-              parent.getItemAtPosition(pos).toString(), Toast.LENGTH_LONG).show();
-        }
-     
-        public void onNothingSelected(AdapterView parent) {
-          // Do nothing.
-        }
-    }
-	
-	private class BangcapSelectedListener implements OnItemSelectedListener {
-	   	 
-        public void onItemSelected(AdapterView<?> parent,
-            View view, int pos, long id) {
-          Toast.makeText(parent.getContext(), "Item is " +
-              parent.getItemAtPosition(pos).toString(), Toast.LENGTH_LONG).show();
-        }
-     
-        public void onNothingSelected(AdapterView parent) {
-          // Do nothing.
-        }
-    }
-	
-	private class LichkhamSelectedListener implements OnItemSelectedListener {
-	   	 
-        public void onItemSelected(AdapterView<?> parent,
-            View view, int pos, long id) {
-          Toast.makeText(parent.getContext(), "Item is " +
-              parent.getItemAtPosition(pos).toString(), Toast.LENGTH_LONG).show();
-        }
-     
-        public void onNothingSelected(AdapterView parent) {
-          // Do nothing.
-        }
-    }
-	
-	private class GioitinhSelectedListener implements OnItemSelectedListener {
-	   	 
-        public void onItemSelected(AdapterView<?> parent,
-            View view, int pos, long id) {
-          Toast.makeText(parent.getContext(), "Item is " +
-              parent.getItemAtPosition(pos).toString(), Toast.LENGTH_LONG).show();
-        }
-     
-        public void onNothingSelected(AdapterView parent) {
-          // Do nothing.
-        }
-    }
+//	private class KhoaSelectedListener implements OnItemSelectedListener {
+//   	 
+//        public void onItemSelected(AdapterView<?> parent,
+//            View view, int pos, long id) {
+//          Toast.makeText(parent.getContext(), "Item is " +
+//              parent.getItemAtPosition(pos).toString(), Toast.LENGTH_LONG).show();
+//        }
+//     
+//        public void onNothingSelected(AdapterView parent) {
+//          // Do nothing.
+//        }
+//    }
+//	
+//	private class BangcapSelectedListener implements OnItemSelectedListener {
+//	   	 
+//        public void onItemSelected(AdapterView<?> parent,
+//            View view, int pos, long id) {
+//          Toast.makeText(parent.getContext(), "Item is " +
+//              parent.getItemAtPosition(pos).toString(), Toast.LENGTH_LONG).show();
+//        }
+//     
+//        public void onNothingSelected(AdapterView parent) {
+//          // Do nothing.
+//        }
+//    }
+//	
+//	private class LichkhamSelectedListener implements OnItemSelectedListener {
+//	   	 
+//        public void onItemSelected(AdapterView<?> parent,
+//            View view, int pos, long id) {
+//          Toast.makeText(parent.getContext(), "Item is " +
+//              parent.getItemAtPosition(pos).toString(), Toast.LENGTH_LONG).show();
+//        }
+//     
+//        public void onNothingSelected(AdapterView parent) {
+//          // Do nothing.
+//        }
+//    }
+//	
+//	private class GioitinhSelectedListener implements OnItemSelectedListener {
+//	   	 
+//        public void onItemSelected(AdapterView<?> parent,
+//            View view, int pos, long id) {
+//          Toast.makeText(parent.getContext(), "Item is " +
+//              parent.getItemAtPosition(pos).toString(), Toast.LENGTH_LONG).show();
+//        }
+//     
+//        public void onNothingSelected(AdapterView parent) {
+//          // Do nothing.
+//        }
+//    }
 
 
 

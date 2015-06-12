@@ -3,26 +3,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
+
     <TextView
-		 android:id="@+id/txtIntro"
-		 android:layout_width="match_parent"
-		 android:layout_height="wrap_content"
-		 android:layout_margin="10dp"
-		 android:background="#FFC966"
-		 android:gravity="center"
-		 android:text="DANH MỤC THẮC MẮC"
-		 android:textSize="30sp" />
-    <ListView 
-         android:id="@+id/lvDanhmuc"
-		 android:layout_width="match_parent"
-		 android:layout_height="wrap_content"
-        >        
-    </ListView>   
-    
-    <Button 
-        android:id="@+id/btnGuicauhoi"
+        android:id="@+id/txtIntro"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="Gửi câu hỏi"/>
+        android:layout_margin="10dp"
+        android:background="#FFC966"
+        android:gravity="center"
+        android:text="DANH MỤC THẮC MẮC"
+        android:textSize="30sp" />
+
+    <ListView
+        android:id="@+id/lvDanhmuc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="#000000"
+        android:dividerHeight="4px"
+        >
+    </ListView>
+
+    <Button
+        android:id="@+id/btnGuicauhoi"
+        android:layout_width="250sp"
+        android:layout_height="60sp"
+        android:layout_margin="10sp"
+        android:drawableLeft="@drawable/register"
+        android:text="Gửi câu hỏi"
+        android:textSize="30sp" />
 
 </LinearLayout>

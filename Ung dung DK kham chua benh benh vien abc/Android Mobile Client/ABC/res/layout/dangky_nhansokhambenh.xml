@@ -3,53 +3,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
+
     <TextView
-		 android:id="@+id/txtIntro"
-		 android:layout_width="match_parent"
-		 android:layout_height="wrap_content"
-		 android:layout_margin="10dp"
-		 android:background="#FFC966"
-		 android:gravity="center"
-		 android:text="#3 NHẬN SỐ KHÁM BỆNH"
-		 android:textSize="30sp" />  
-		 
-    <ScrollView 
-          android:layout_width="match_parent"
-    	  android:layout_height="match_parent"
-    	>
-    	<LinearLayout
-	     android:layout_width="match_parent"
-		 android:layout_height="match_parent" 
-		 android:orientation="vertical"
-	     >
-	     <TextView
-		 android:id="@+id/txtThongbao"
-		 android:layout_width="match_parent"
-		 android:layout_height="wrap_content"
-		 android:layout_margin="10dp"
-		 android:background="#FFC966"
-		 android:gravity="center"
-		 android:textSize="30sp" />  
-	
-   	 
- 	    <Button
-		     android:id="@+id/btnKetthuc"
-			 android:layout_width="match_parent"
-			 android:layout_height="wrap_content"
-			 android:background="#FFC966"
-			 android:text="KẾT THÚC"
-			 android:textSize="30sp"
-			 android:layout_alignParentLeft="true"
-			 android:layout_marginTop="300sp"
-       	/>   
-	
-	     
-	 </LinearLayout>		 
-    
-    
-	</ScrollView>
-	 
-   	 
-    
+        android:id="@+id/txtIntro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="#FFC966"
+        android:gravity="center"
+        android:text="#3 NHẬN SỐ KHÁM BỆNH"
+        android:textSize="30sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/txtThongbao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="#FFC966"
+                android:gravity="center"
+                android:textSize="30sp" />
+
+
+            <Button
+                android:id="@+id/btnKetthuc"
+                android:layout_width="250sp"
+                android:layout_height="60sp"
+                android:layout_margin="10sp"
+                android:drawableLeft="@drawable/register"
+                android:text="Kết thúc"
+                android:textSize="30sp" />
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

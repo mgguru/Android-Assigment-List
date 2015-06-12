@@ -30,8 +30,8 @@ public class MainActivity extends Activity {
 			}
 		});
         
-        Button btnLichkham = (Button) findViewById(R.id.button2);
-        btnLichkham.setOnClickListener(new OnClickListener() {
+        Button btnGioithieu = (Button) findViewById(R.id.button2);
+        btnGioithieu.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {

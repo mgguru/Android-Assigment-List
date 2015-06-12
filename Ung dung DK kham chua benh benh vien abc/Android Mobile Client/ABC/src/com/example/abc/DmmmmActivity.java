@@ -7,6 +7,7 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.example.adapter.NothingSelectedSpinnerAdapter;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -39,7 +40,12 @@ public class DmmmmActivity extends Activity {
 		ArrayAdapter<CharSequence> adapterKhoa = ArrayAdapter
 				.createFromResource(this, R.array.ds_khoa,
 						R.layout.spinner_item);
-		spnChuyenkhoa.setAdapter(adapterKhoa);
+		//spnChuyenkhoa.setAdapter(adapterKhoa);
+		spnChuyenkhoa.setAdapter(new NothingSelectedSpinnerAdapter(adapterKhoa,
+				R.layout.spinner_khoa_no_select,
+				// R.layout.contact_spinner_nothing_selected_dropdown, //
+				// Optional
+				this));
 		spnChuyenkhoa.setOnItemSelectedListener(new KhoaSelectedListener());
 
 		PD = new ProgressDialog(this);
@@ -123,22 +129,26 @@ public class DmmmmActivity extends Activity {
 
 		public void onItemSelected(AdapterView<?> parent, View view, int pos,
 				long id) {
-			Toast.makeText(parent.getContext(),
-					"Item is " + parent.getItemAtPosition(pos).toString(),
-					Toast.LENGTH_LONG).show();
-			
-			String TenKhoa = parent.getItemAtPosition(pos).toString();
-			if (TenKhoa.equals("Thần kinh")) {
-				MaKhoa = "K01";
-			} else if (TenKhoa.equals("Tim mạch")) {
-				MaKhoa = "K02";
-			} else if (TenKhoa.equals("Răng - hàm - mặt")) {
-				MaKhoa = "K03";
-			} else if (TenKhoa.equals("Da liễu")) {
-				MaKhoa = "K04";
-			} else {
-				MaKhoa = "K05";
+//			Toast.makeText(parent.getContext(),
+//					"Item is " + parent.getItemAtPosition(pos).toString(),
+//					Toast.LENGTH_LONG).show();
+			if(pos==0){
+				
+			}else{
+				String TenKhoa = parent.getItemAtPosition(pos).toString();
+				if (TenKhoa.equals("Thần kinh")) {
+					MaKhoa = "K01";
+				} else if (TenKhoa.equals("Tim mạch")) {
+					MaKhoa = "K02";
+				} else if (TenKhoa.equals("Răng - hàm - mặt")) {
+					MaKhoa = "K03";
+				} else if (TenKhoa.equals("Da liễu")) {
+					MaKhoa = "K04";
+				} else {
+					MaKhoa = "K05";
+				}
 			}
+			
 		}
 
 		@Override

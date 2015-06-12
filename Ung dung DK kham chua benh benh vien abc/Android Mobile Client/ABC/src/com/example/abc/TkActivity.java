@@ -12,12 +12,15 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcel;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -26,6 +29,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.Request.Method;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.example.adapter.NothingSelectedSpinnerAdapter;
 import com.example.adapter.TkAdapter;
 import com.example.entity.BacSi;
 import com.example.entity.CauHoi;
@@ -33,10 +37,12 @@ import com.example.entity.CauHoi;
 public class TkActivity extends Activity {
 
 	GridView gv;
-	String url = "http://169.254.189.95:8080/android/dsbacsi.php";
 	ProgressDialog pDialog;
 	List<BacSi> listBacsi = new ArrayList<BacSi>();
+	EditText edtHoten;
 	TkAdapter adapter;
+	String strKeyup= " ";
+	String strKhoa = " ";
 	BacSi bacsi;
 
 	@Override
@@ -44,13 +50,11 @@ public class TkActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.timkiem_bacsi);
 		createSpinner();
-
 		gv = (GridView) findViewById(R.id.gvBacsi);
 
 		pDialog = new ProgressDialog(this);
 		pDialog.setMessage("Loading...");
 		pDialog.show();
-
 		getListBacSi();
 		adapter = new TkAdapter(TkActivity.this, listBacsi);
 		gv.setAdapter(adapter);	
@@ -88,6 +92,36 @@ public class TkActivity extends Activity {
 			}
 		});
 
+		edtHoten = (EditText) findViewById(R.id.edtHoten);
+		TextWatcher txtWatcher = new TextWatcher() {
+			
+			@Override
+			public void onTextChanged(CharSequence s, int start, int before, int count) {
+				// TODO Auto-generated method stub
+				  if (filterLongEnough()) {
+					  strKeyup = edtHoten.getText().toString();		
+					  getListBacSi();
+		            }
+			}
+			
+			@Override
+			public void beforeTextChanged(CharSequence s, int start, int count,
+					int after) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void afterTextChanged(Editable s) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			private boolean filterLongEnough() {
+	            return edtHoten.getText().toString().trim().length() >= 0;
+	        }
+		};
+		edtHoten.addTextChangedListener(txtWatcher);
 		// String[] value = getResources().getStringArray(R.array.ds_bacsi);
 		// TkGridAdapter adapter = new TkGridAdapter(TkActivity.this, value);
 		// gv = (GridView) this.findViewById(R.id.gvBacsi);
@@ -107,10 +141,13 @@ public class TkActivity extends Activity {
 	}
 
 	private void getListBacSi() {
+		//String url = "http://169.254.189.95:8080/android/dsbacsi.php?Hoten="+strKeyup+"&Khoa="+strKhoa;
+		String url = "http://192.168.56.1:8080/android/dsbacsi.php?Hoten="+strKeyup+"&Khoa="+strKhoa;
 		JsonObjectRequest jreq = new JsonObjectRequest(Method.GET, url, null,
 				new Response.Listener<JSONObject>() {
 					@Override
 					public void onResponse(JSONObject response) {
+						listBacsi.clear();
 						try {
 							int success = response.getInt("success");
 							if (success == 1) {
@@ -161,44 +198,72 @@ public class TkActivity extends Activity {
 		ArrayAdapter<CharSequence> adapterKhoa = ArrayAdapter
 				.createFromResource(this, R.array.ds_khoa,
 						R.layout.spinner_item);
-		spnChuyenkhoa.setAdapter(adapterKhoa);
+		//spnChuyenkhoa.setAdapter(adapterKhoa);
+		spnChuyenkhoa.setAdapter(new NothingSelectedSpinnerAdapter(adapterKhoa,
+				R.layout.spinner_khoa_no_select,
+				// R.layout.contact_spinner_nothing_selected_dropdown, //
+				// Optional
+				this));
 		spnChuyenkhoa.setOnItemSelectedListener(new KhoaSelectedListener());
 
-		Spinner spnLichkham = (Spinner) findViewById(R.id.spnLichkham);
-		ArrayAdapter<CharSequence> adapterLichkham = ArrayAdapter
-				.createFromResource(this, R.array.ds_lichkham,
-						R.layout.spinner_item);
-		spnLichkham.setAdapter(adapterLichkham);
-		spnLichkham.setOnItemSelectedListener(new LichkhamSelectedListener());
+//		Spinner spnLichkham = (Spinner) findViewById(R.id.spnLichkham);
+//		ArrayAdapter<CharSequence> adapterLichkham = ArrayAdapter
+//				.createFromResource(this, R.array.ds_lichkham,
+//						R.layout.spinner_item);
+//		spnLichkham.setAdapter(adapterLichkham);
+//		spnLichkham.setOnItemSelectedListener(new LichkhamSelectedListener());
 	}
 
 	private class KhoaSelectedListener implements OnItemSelectedListener {
 
 		public void onItemSelected(AdapterView<?> parent, View view, int pos,
 				long id) {
-			Toast.makeText(parent.getContext(),
-					"Item is " + parent.getItemAtPosition(pos).toString(),
-					Toast.LENGTH_LONG).show();
+			//Toast.makeText(parent.getContext(),
+				//	"Item is " + parent.getItemAtPosition(pos).toString(),
+					//Toast.LENGTH_LONG).show();	
+			//strKhoa = parent.getItemAtPosition(pos).toString();
+			if(pos==0){
+				
+			}else{
+				String TenKhoa = parent.getItemAtPosition(pos).toString();
+				if (TenKhoa.equals("Thần kinh")) {
+					strKhoa = "Than";
+				} else if (TenKhoa.equals("Tim mạch")) {
+					strKhoa = "Tim";
+				} else if (TenKhoa.equals("Răng - hàm - mặt")) {
+					strKhoa = "Rang";
+				} else if (TenKhoa.equals("Da liễu")) {
+					strKhoa = "Da";
+				} else if (TenKhoa.equals("Chỉnh hình")){
+					strKhoa = "Chinh";
+				}else {
+					strKhoa = " ";
+				}
+				getListBacSi();
+			}
+			
+			
 		}
 
 		public void onNothingSelected(AdapterView parent) {
 			// Do nothing.
+			strKhoa = " ";
 		}
 	}
 
-	private class LichkhamSelectedListener implements OnItemSelectedListener {
-
-		public void onItemSelected(AdapterView<?> parent, View view, int pos,
-				long id) {
-			Toast.makeText(parent.getContext(),
-					"Item is " + parent.getItemAtPosition(pos).toString(),
-					Toast.LENGTH_LONG).show();
-		}
-
-		public void onNothingSelected(AdapterView parent) {
-			// Do nothing.
-		}
-	}
+//	private class LichkhamSelectedListener implements OnItemSelectedListener {
+//
+//		public void onItemSelected(AdapterView<?> parent, View view, int pos,
+//				long id) {
+//			Toast.makeText(parent.getContext(),
+//					"Item is " + parent.getItemAtPosition(pos).toString(),
+//					Toast.LENGTH_LONG).show();
+//		}
+//
+//		public void onNothingSelected(AdapterView parent) {
+//			// Do nothing.
+//		}
+//	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

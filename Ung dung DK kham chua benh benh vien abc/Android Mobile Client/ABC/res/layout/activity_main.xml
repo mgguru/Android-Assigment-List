@@ -51,7 +51,7 @@
 		        android:layout_margin="10dp"
 		        android:text="Tư vấn"
 		        android:layout_alignParentLeft="true"
-		        android:drawableTop="@drawable/ic_launcher"
+		        android:drawableTop="@drawable/hoidap"
 		        />
                <Button
 		        android:id="@+id/button2"
@@ -59,9 +59,9 @@
 		        android:layout_height="240sp"
 		        android:textSize="30sp"
 		        android:layout_margin="10dp"
-		        android:text="Lịch khám bệnh"
+		        android:text="Giới thiệu"
 		        android:layout_toRightOf="@+id/button1"
-		       	android:drawableTop="@drawable/ic_launcher"
+		       	android:drawableTop="@drawable/gioithieu"
 		        />
                <Button
 		        android:id="@+id/button3"
@@ -72,7 +72,7 @@
 		        android:text="Đăng ký khám bệnh"
 		        android:layout_below="@+id/button2"
 		        android:layout_toRightOf="@+id/button4"
-		        android:drawableTop="@drawable/ic_launcher"
+		        android:drawableTop="@drawable/dangkykb"
 		        />
                <Button
 		        android:id="@+id/button4"
@@ -82,7 +82,7 @@
 		        android:layout_margin="10dp"		     
 		        android:text="Tìm bác sĩ"
 		        android:layout_below="@+id/button1"
-		        android:drawableTop="@drawable/ic_launcher"
+		        android:drawableTop="@drawable/timbacsi"
 		        />   
                 
             </RelativeLayout>

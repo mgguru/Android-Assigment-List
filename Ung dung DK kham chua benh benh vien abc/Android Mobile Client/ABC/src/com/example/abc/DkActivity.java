@@ -4,13 +4,6 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.example.abc.MyApplication;
-
-import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
@@ -21,24 +14,27 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout.LayoutParams;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.example.adapter.NothingSelectedSpinnerAdapter;
 
 public class DkActivity extends Activity {
 
 	TextView txtNgaykhambenh;
 	int year, month, day;
-	Button btn;
+	Button btn, btnReset;
 	static final int DATE_DIALOG_ID = 999;
 	String url = "http://169.254.189.95:8080/android/dangky.php";
 	String TenNguoiDK, SoDienThoai, NgayKham, MaKhoa, TenKhoa;
@@ -78,8 +74,16 @@ public class DkActivity extends Activity {
 		ArrayAdapter<CharSequence> adapterKhoa = ArrayAdapter
 				.createFromResource(this, R.array.ds_khoa,
 						R.layout.spinner_item);
-		spnChuyenkhoa.setAdapter(adapterKhoa);
+		// spnChuyenkhoa.setAdapter(adapterKhoa);
+		// adapterKhoa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		// spnChuyenkhoa.setPrompt("Select your favorite Planet!");
+		spnChuyenkhoa.setAdapter(new NothingSelectedSpinnerAdapter(adapterKhoa,
+				R.layout.spinner_khoa_no_select,
+				// R.layout.contact_spinner_nothing_selected_dropdown, //
+				// Optional
+				DkActivity.this));
 		spnChuyenkhoa.setOnItemSelectedListener(new KhoaSelectedListener());
+		//spnChuyenkhoa.setSelection(1);
 
 		/*
 		 * Spinner spnBacsi = (Spinner) findViewById(R.id.spnBacsi);
@@ -97,7 +101,21 @@ public class DkActivity extends Activity {
 
 		edtHoten = (EditText) findViewById(R.id.edtHoten);
 		edtSodienthoai = (EditText) findViewById(R.id.edtSodienthoai);
+		
+		
+		btnReset = (Button) findViewById(R.id.btnLamlai);
+		btnReset.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				edtHoten.setText("");
+				edtSodienthoai.setText("");
+				txtNgaykhambenh.setText("");
+				spnChuyenkhoa.setSelection(0);
 
+			}
+		});
 		btn = (Button) findViewById(R.id.btnDangky);
 		btn.setOnClickListener(new OnClickListener() {
 			@Override
@@ -234,20 +252,24 @@ public class DkActivity extends Activity {
 
 		public void onItemSelected(AdapterView<?> parent, View view, int pos,
 				long id) {
-			Toast.makeText(parent.getContext(),
-					"Item is " + parent.getItemAtPosition(pos).toString(),
-					Toast.LENGTH_LONG).show();
-			TenKhoa = parent.getItemAtPosition(pos).toString();
-			if (TenKhoa.equals("Thần kinh")) {
-				MaKhoa = "K01";
-			} else if (TenKhoa.equals("Tim mạch")) {
-				MaKhoa = "K02";
-			} else if (TenKhoa.equals("Răng - hàm - mặt")) {
-				MaKhoa = "K03";
-			} else if (TenKhoa.equals("Da liễu")) {
-				MaKhoa = "K04";
+			// Toast.makeText(parent.getContext(),
+			// "Item is " + parent.getItemAtPosition(pos).toString(),
+			// Toast.LENGTH_LONG).show();
+			if (pos == 0) {
+
 			} else {
-				MaKhoa = "K05";
+				TenKhoa = parent.getItemAtPosition(pos).toString();
+				if (TenKhoa.equals("Thần kinh")) {
+					MaKhoa = "K01";
+				} else if (TenKhoa.equals("Tim mạch")) {
+					MaKhoa = "K02";
+				} else if (TenKhoa.equals("Răng - hàm - mặt")) {
+					MaKhoa = "K03";
+				} else if (TenKhoa.equals("Da liễu")) {
+					MaKhoa = "K04";
+				} else {
+					MaKhoa = "K05";
+				}
 			}
 
 		}

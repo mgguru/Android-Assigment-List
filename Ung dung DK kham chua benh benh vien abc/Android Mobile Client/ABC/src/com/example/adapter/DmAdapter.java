@@ -49,10 +49,20 @@ public class DmAdapter extends BaseAdapter {
 		// TODO Auto-generated method stub
 		if (convertView == null) {
             convertView = inflater.inflate(R.layout.item_danhmuc_thacmac, null);            
-            ImageView iv = (ImageView) convertView.findViewById(R.id.imgDanhmuc);
-            iv.setImageResource(R.drawable.ic_launcher);
+            ImageView iv = (ImageView) convertView.findViewById(R.id.imgDanhmuc);          
             TextView tv =(TextView) convertView.findViewById(R.id.txtTendanhmuc);
             tv.setText(items[position]);
+            if (position==0){
+            	  iv.setImageResource(R.drawable.thankinh);
+            }else if(position==1){
+            	  iv.setImageResource(R.drawable.timmach);
+            }else if(position==2){
+            	  iv.setImageResource(R.drawable.ranghammat);
+            }else if(position==3){
+            	  iv.setImageResource(R.drawable.dalieu);
+            }else{
+            	  iv.setImageResource(R.drawable.chinhhinh);
+            }
         }
 		
 		return convertView;

@@ -7,6 +7,7 @@
             android:id="@+id/imgDanhmuc"
             android:layout_width="100sp"
             android:layout_height="100sp"
+            android:layout_margin="10dp"
             android:layout_alignParentLeft="true"
             android:src="@drawable/ic_launcher"
             />    
@@ -14,11 +15,12 @@
 		 android:id="@+id/txtTendanhmuc"
 		 android:layout_width="wrap_content"
 		 android:layout_height="wrap_content"
-		 android:layout_margin="10dp"
+		 android:layout_marginLeft="50dp"
+		 android:layout_marginTop="10dp"
+		 android:layout_marginBottom="10dp"
 		 android:layout_toRightOf="@+id/imgDanhmuc"
 		 android:layout_alignTop="@+id/imgDanhmuc"
-		 android:background="#FFC966"
-		 android:gravity="center"
+		 android:gravity="center_horizontal"
 		 android:text="tên"
 		 android:textSize="50sp" />
 

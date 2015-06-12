@@ -13,7 +13,7 @@
 		 android:text="TÌM BÁC SĨ"
 		 android:textSize="30sp" />
       
-      	<TextView
+      	<!--<TextView
 		 android:id="@+id/txtHoten"
 		 android:layout_width="wrap_content"
 		 android:layout_height="wrap_content"
@@ -21,7 +21,7 @@
 		 android:background="#FFC966"
 		 android:gravity="center"
 		 android:text="Họ và tên"
-		 android:textSize="30sp" />
+		 android:textSize="30sp" />-->
           		 <EditText 
          android:id="@+id/edtHoten"
 		 android:layout_width="match_parent"
@@ -30,7 +30,7 @@
 		 android:textSize="30sp"
 		 android:hint="Nhập tên bác sĩ"
          />
-          <TextView
+          <!-- <TextView
 		 android:id="@+id/txtLinhvuc"
 		 android:layout_width="wrap_content"
 		 android:layout_height="wrap_content"
@@ -38,14 +38,14 @@
 		 android:background="#FFC966"
 		 android:gravity="center"
 		 android:text="Chọn lĩnh vực bác sĩ"
-		 android:textSize="30sp" />		 
+		 android:textSize="30sp" />		 --> 
           <Spinner
 	    android:id="@+id/spnChuyenkhoa"
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
 	    android:prompt="@string/prompt_khoa"
 	    />
-           <TextView
+      <!--     <TextView
 		 android:id="@+id/txtLichkham"
 		 android:layout_width="wrap_content"
 		 android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
 	    android:prompt="@string/prompt_lichkham"
-	    />
+	    />-->
           
  	    <Button
 		     android:id="@+id/btnTiemkiem"
